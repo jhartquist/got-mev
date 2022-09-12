@@ -9,7 +9,7 @@ const TransactionLink = ({ hash, children = undefined, short = true }: Props) =>
   const url = `https://etherscan.io/tx/${hash}`;
 
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" rel="noreferrer">
       {children ?? short ? shortAddress(hash) : hash}
     </a>
   );

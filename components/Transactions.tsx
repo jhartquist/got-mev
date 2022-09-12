@@ -73,7 +73,7 @@ const Transaction = ({ transaction, miner }: { transaction: TransactionData; min
         <DataDisplay label="Payment (gas)" value={`${formatNumber(transaction.paymentGas)} ETH`} />
         <DataDisplay label="Payment (transfer)" value={`${formatNumber(transaction.paymentTransfer)} ETH`} />
         <DataDisplay label="Payment (total)" value={`${formatNumber(transaction.paymentTotal)} ETH`} />
-        <DataDisplay label="Flashbots bundle?" value={transaction.flashbotsBundleIndex?.toString() ?? "-"} />
+        <DataDisplay label="Flashbots bundle" value={transaction.flashbotsBundleIndex?.toString() ?? "-"} />
       </TransactionInfo>
       <BalancesAndTransfers>
         <SectionLabel>Balance Changes</SectionLabel>

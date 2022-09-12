@@ -84,7 +84,7 @@ const Home: NextPage = () => {
     <Main>
       <Header>got MEV?</Header>
       <Text>
-        Paste an Ethereum transaction hash to see it's token transfers.
+        Paste an Ethereum transaction hash to see it&apos;s token transfers.
         <br />
         If submitted via Flashbots, any bundled transactions will appear as well.
       </Text>
@@ -98,15 +98,15 @@ const Home: NextPage = () => {
       {blockData ? <Block block={blockData} /> : blockData === null ? "Unable to find transaction/block" : ""}
       <FooterText>
         Created by{" "}
-        <a href="https://twitter.com/0xB2E3" target="_blank">
+        <a href="https://twitter.com/0xB2E3" target="_blank" rel="noreferrer">
           @0xB2E3
         </a>{" "}
         for the{" "}
-        <a href="https://www.encode.club/wintermute-mev-hack" target="_blank">
+        <a href="https://www.encode.club/wintermute-mev-hack" target="_blank" rel="noreferrer">
           Encode x Wintermute MEV Hack
         </a>{" "}
         with{" "}
-        <a href="https://flashbots.net" target="_blank">
+        <a href="https://flashbots.net" target="_blank" rel="noreferrer">
           Flashbots
         </a>
         .

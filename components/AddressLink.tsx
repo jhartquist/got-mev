@@ -16,7 +16,7 @@ const AddressLink = ({ address, short = true }: AddressLinkProps) => {
   const url = `https://etherscan.io/address/${address}`;
   const color = `#${address.slice(2, 8)}33`;
   return (
-    <AddressLabel color={color} href={url} target="_blank">
+    <AddressLabel color={color} href={url} target="_blank" rel="noreferrer">
       {short ? shortAddress(address) : address}
     </AddressLabel>
   );

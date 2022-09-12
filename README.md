@@ -17,3 +17,4 @@ Check out https://explore.flashbots.net/leaderboard to see more examples of MEV.
 
 - Identify and label DEX pools (Uniswap, Sushiswap, etc.)
 - Find related transactions based on the pools they interact with (to identify backrunning/frontrunning not submitted through Flashbots)
+- Clean up the code and only query necessary data

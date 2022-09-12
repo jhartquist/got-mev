@@ -39,7 +39,7 @@ const TransactionInput = styled.input`
   display: inline;
   font-size: 20px;
   color: #333333;
-  width: 68ch;
+  width: 70ch;
   border: none;
   padding: 6px 24px;
 `;

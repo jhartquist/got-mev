@@ -1,9 +1,8 @@
 import { NextPage } from "next";
-import { useRouter } from "next/router";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Block } from "../components/Block";
-import { getData } from "../lib/data";
 import { BlockData } from "../lib/types";
 
 const Main = styled.main`
@@ -40,7 +39,7 @@ const TransactionInput = styled.input`
   display: inline;
   font-size: 20px;
   color: #333333;
-  width: 66ch;
+  width: 68ch;
   border: none;
   padding: 6px 24px;
 `;
@@ -81,37 +80,43 @@ const Home: NextPage = () => {
   }, [validHash]);
 
   return (
-    <Main>
-      <Header>got MEV?</Header>
-      <Text>
-        Paste an Ethereum transaction hash to see it&apos;s token transfers.
-        <br />
-        If submitted via Flashbots, any bundled transactions will appear as well.
-      </Text>
-      <TransactionInput
-        type="text"
-        placeholder="0x000000000000000000000000000000000000000000000000000000000000000"
-        value={inputHash}
-        onChange={(e) => setInputHash(e.target.value)}
-      />
-      {loading && "Loading..."}
-      {blockData ? <Block block={blockData} /> : blockData === null ? "Unable to find transaction/block" : ""}
-      <FooterText>
-        Created by{" "}
-        <a href="https://twitter.com/0xB2E3" target="_blank" rel="noreferrer">
-          @0xB2E3
-        </a>{" "}
-        for the{" "}
-        <a href="https://www.encode.club/wintermute-mev-hack" target="_blank" rel="noreferrer">
-          Encode x Wintermute MEV Hack
-        </a>{" "}
-        with{" "}
-        <a href="https://flashbots.net" target="_blank" rel="noreferrer">
-          Flashbots
-        </a>
-        .
-      </FooterText>
-    </Main>
+    <>
+      <Head>
+        <title>got MEV?</title>
+      </Head>
+      <Main>
+        <Header>got MEV?</Header>
+        <Text>
+          Paste an Ethereum transaction hash to see it&apos;s token transfers.
+          <br />
+          If submitted via Flashbots, any bundled transactions will appear as well.
+        </Text>
+        <TransactionInput
+          autoFocus={true}
+          type="text"
+          placeholder="0x000000000000000000000000000000000000000000000000000000000000000"
+          value={inputHash}
+          onChange={(e) => setInputHash(e.target.value)}
+        />
+        {loading && "Loading..."}
+        {blockData ? <Block block={blockData} /> : blockData === null ? "Unable to find transaction/block" : ""}
+        <FooterText>
+          Created by{" "}
+          <a href="https://twitter.com/0xB2E3" target="_blank" rel="noreferrer">
+            @0xB2E3
+          </a>{" "}
+          for the{" "}
+          <a href="https://www.encode.club/wintermute-mev-hack" target="_blank" rel="noreferrer">
+            Encode x Wintermute MEV Hack
+          </a>{" "}
+          with{" "}
+          <a href="https://flashbots.net" target="_blank" rel="noreferrer">
+            Flashbots
+          </a>
+          .
+        </FooterText>
+      </Main>
+    </>
   );
 };
 
